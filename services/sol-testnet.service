@@ -1,0 +1,19 @@
+[Unit]
+Description=Solana Testnet Validator
+After=network.target
+
+[Service]
+Type=simple
+User=sol
+LimitNOFILE=1000000
+LogRateLimitIntervalSec=0
+Environment="PATH=/bin:/usr/bin:/home/sol/agave/bin"
+ExecStart=/home/sol/bin/run-validator.sh testnet # --clear-ledger
+TimeoutStopSec=10s
+KillMode=control-group
+# ExecStartPost=/bin/sleep 10
+# ExecStartPost=/home/sol/agave/bin/agave-validator set-log-filter 'solana_program_runtime=info'
+RuntimeMaxSec=1800
+
+[Install]
+WantedBy=multi-user.target
