@@ -85,8 +85,9 @@ export SOLANA_METRICS_CONFIG="$METRICS_CONFIG"
 
 # Optionally clear the ledger
 if [ "$CLEAR_LEDGER" = true ]; then
-    echo "Clearing the ledger at /mnt/ledger..."
-    rm -rf /mnt/ledger/*
+    echo "Clearing the ledger at /mnt/ledger/ledger..."
+    find /mnt/ledger -mindepth 1 -not -name 'lost+found' -delete
+    find /mnt/accounts -mindepth 1 -not -name 'lost+found' -delete
     NO_SNAPSHOT_FLAG=""
 else
     NO_SNAPSHOT_FLAG="--no-snapshot-fetch"
@@ -124,6 +125,7 @@ exec /home/sol/agave/bin/agave-validator \
     --only-known-rpc \
     --log $LOG_FILE \
     --ledger /mnt/ledger \
+    --accounts /mnt/accounts \
     --rpc-port 8899 \
     --dynamic-port-range 8000-8020 \
     --expected-genesis-hash $GENESIS_HASH \

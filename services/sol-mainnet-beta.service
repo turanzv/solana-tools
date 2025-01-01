@@ -13,7 +13,7 @@ TimeoutStartSec=130s
 TimeoutStopSec=10s
 KillMode=control-group
 ExecStartPost=/bin/sleep 100
-ExecStartPost=/home/sol/agave/bin/agave-validator --ledger /mnt/ledger set-log-filter 'solana_program_runtime=info'
+ExecStartPost=/home/sol/agave/bin/agave-validator --ledger /mnt/ledger set-log-filter solana_program_runtime=info,solana_metrics::metrics=info
 RuntimeMaxSec=43200
 
 [Install]
