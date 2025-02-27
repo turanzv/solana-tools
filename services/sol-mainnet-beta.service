@@ -12,9 +12,13 @@ ExecStart=/home/sol/bin/run-validator.sh mainnet-beta --clear-ledger
 TimeoutStartSec=130s
 TimeoutStopSec=10s
 KillMode=control-group
-ExecStartPost=/bin/sleep 100
-ExecStartPost=/home/sol/agave/bin/agave-validator --ledger /mnt/ledger set-log-filter solana_program_runtime=info,solana_metrics::metrics=info
+# ExecStartPost=/bin/sleep 100i
+ExecStartPost=/bin/bash -c '/home/sol/solana-tools/scripts/agave-memory-tracker.sh &'
+# ExecStartPost=/home/sol/agave/bin/agave-validator --ledger /mnt/ledger/ledger set-log-filter 'solana_program_runtime=info'
 RuntimeMaxSec=43200
+MemoryMax=256G
+# MemorySwapMax=0G
+# CPUQuota=1600%
 
 [Install]
 WantedBy=multi-user.target
