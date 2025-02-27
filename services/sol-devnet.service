@@ -17,3 +17,5 @@ RuntimeMaxSec=3600
 
 [Install]
 WantedBy=default.target
+
+# don't forget loginctl enable-linger ubuntu
