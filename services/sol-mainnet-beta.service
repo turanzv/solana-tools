@@ -21,4 +21,4 @@ RuntimeMaxSec=43200
 # CPUQuota=1600%
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=default.target

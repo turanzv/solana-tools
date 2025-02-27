@@ -16,4 +16,4 @@ KillMode=control-group
 RuntimeMaxSec=3600
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=default.target
