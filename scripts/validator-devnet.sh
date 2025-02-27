@@ -12,7 +12,7 @@ exec agave-validator \
     --known-validator dv4ACNkpYPcE3aKmYDqZm9G5EB3J4MRoeE7WNDRBVJB \
     --known-validator dv3qDFk1DTF36Z62bNvrCXe9sKATA6xvVy6A798xxAS \
     --only-known-rpc \
-    --log /home/sol/solana-devnet-validator.log \
+    --log /home/ubuntu/solana-devnet-validator.log \
     --ledger /mnt/ledger \
     --rpc-port 8899 \
     --dynamic-port-range 8000-8020 \

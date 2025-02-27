@@ -10,7 +10,7 @@ TIME=$(date -u +"%H-%M-%S")
 NETWORK=$1
 
 # Define the log directory and file paths
-LOG_DIR="/home/sol/logs"
+LOG_DIR="/home/ubuntu/logs"
 LOG_FILE="$LOG_DIR/$DATE-$TIME-$NETWORK-memory.log"
 
 # Ensure the log directory exists

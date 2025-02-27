@@ -78,7 +78,7 @@ case $NETWORK in
 esac
 
 # Switch the Solana client cluster
-/home/sol/agave/bin/solana config set --url $SOLANA_URL
+/home/ubuntu/agave/bin/solana config set --url $SOLANA_URL
 
 # Export metrics configuration
 export SOLANA_METRICS_CONFIG="$METRICS_CONFIG"
@@ -110,16 +110,16 @@ DATE=$(date +%Y-%m-%d)
 TIME=$(date +%H-%M-%S)
 
 # Define the log directory base path
-LOG_DIR="/home/sol/logs"
+LOG_DIR="/home/ubuntu/logs"
 LOG_FILE="$LOG_DIR/$DATE-$TIME-$NETWORK.log"
 
 # Create the directory structure
 mkdir -p $LOG_DIR
 
 # Execute the validator with the dynamic configuration
-exec /home/sol/agave/bin/agave-validator \
-    --identity /home/sol/validator-keypair.json \
-    --vote-account /home/sol/vote-account-keypair.json \
+exec /home/ubuntu/agave/bin/agave-validator \
+    --identity /home/ubuntu/validator-keypair.json \
+    --vote-account /home/ubuntu/vote-account-keypair.json \
     $KNOWN_VALIDATORS_ARGS \
     $ENTRYPOINT_ARGS \
     --only-known-rpc \
