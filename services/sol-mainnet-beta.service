@@ -16,7 +16,7 @@ KillMode=control-group
 ExecStartPost=/bin/bash -c '/home/ubuntu/solana-tools/scripts/agave-memory-tracker.sh &'
 # ExecStartPost=/home/ubuntu/agave/bin/agave-validator --ledger /mnt/ledger/ledger set-log-filter 'solana_program_runtime=info'
 RuntimeMaxSec=43200
-MemoryMax=256G
+# MemoryMax=256G
 # MemorySwapMax=0G
 # CPUQuota=1600%
 
