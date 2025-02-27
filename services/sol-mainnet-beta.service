@@ -7,14 +7,14 @@ Type=simple
 User=sol
 LimitNOFILE=1000000
 LogRateLimitIntervalSec=0
-Environment="PATH=/bin:/usr/bin:/home/sol/agave/bin"
-ExecStart=/home/sol/bin/run-validator.sh mainnet-beta --clear-ledger
+Environment="PATH=/bin:/usr/bin:/home/ubuntu/agave/bin"
+ExecStart=/home/ubuntu/bin/run-validator.sh mainnet-beta --clear-ledger
 TimeoutStartSec=130s
 TimeoutStopSec=10s
 KillMode=control-group
 # ExecStartPost=/bin/sleep 100i
-ExecStartPost=/bin/bash -c '/home/sol/solana-tools/scripts/agave-memory-tracker.sh &'
-# ExecStartPost=/home/sol/agave/bin/agave-validator --ledger /mnt/ledger/ledger set-log-filter 'solana_program_runtime=info'
+ExecStartPost=/bin/bash -c '/home/ubuntu/solana-tools/scripts/agave-memory-tracker.sh &'
+# ExecStartPost=/home/ubuntu/agave/bin/agave-validator --ledger /mnt/ledger/ledger set-log-filter 'solana_program_runtime=info'
 RuntimeMaxSec=43200
 MemoryMax=256G
 # MemorySwapMax=0G
