@@ -86,8 +86,7 @@ export SOLANA_METRICS_CONFIG="$METRICS_CONFIG"
 # Optionally clear the ledger
 if [ "$CLEAR_LEDGER" = true ]; then
     echo "Clearing the ledger at /mnt/ledger/ledger..."
-    find /mnt/ledger -mindepth 1 -not -name 'lost+found' -delete
-    find /mnt/accounts -mindepth 1 -not -name 'lost+found' -delete
+    rm -rf /mnt/ledger/* /mnt/accounts/*
     NO_SNAPSHOT_FLAG=""
 else
     NO_SNAPSHOT_FLAG="--no-snapshot-fetch"
